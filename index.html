@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Form Example</title>
+</head>
+<body>
+    <form id="ajax-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="response"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#ajax-form').on('submit', function(e){
+                e.preventDefault(); // Prevent the default form submission
+
+                // Replace with your Google Apps Script URL
+                var scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+
+                $.ajax({
+                    type: 'POST',
+                    url: scriptURL,
+                    data: $(this).serialize(),
+                    success: function(response){
+                        $('#response').html(response); // Display the response
+                    },
+                    error: function() {
+                        $('#response').html('Error writing to Google Sheets.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
