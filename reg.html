@@ -1,53 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Contact | Your Representative</title>
+    <title>Atu Foundation - Community Service</title> 
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <meta property="og:title" content="Connect with Sam the Representative of the People">
-     <meta property="og:description" content="Join hands with me as we build Enugu North and South Federal Constituency.">
-     <meta property="og:image" content="img/Chimaobi_Atu.jpg">
-     <meta property="og:url" content="https://cyberbill1.github.io/ifeanyi-barth/sam-atu">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <!-- Google fonts - Roboto + Roboto Slab-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300">
-  
-      <!-- Google Web Fonts -->
+    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
-    
-    <!-- owl carousel-->
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
-    <!-- animate.css-->
-    <link rel="stylesheet" href="vendor/animate.css/animate.css">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
-    <!-- Leaflet CSS - For the map-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/Chimaobi_Atu.jpg">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
- 
-  <style>
-    /* Styling for the main content area */
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+     
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+<style> 
+  /* Styling for the main content area */
 main {
   margin-top: 20px;
   display: flex;
@@ -55,7 +40,7 @@ main {
   align-items: center;
 }
 #submit{
-	border: none;
+	border: none;</
 	background-color: red;
 	color: white;
 	width: 200px;
@@ -67,25 +52,88 @@ main {
 	background-color: #26d48c;
 }
   </style>
-  
-  </head>
+</head> 
 
-<!-- Facebook Comment-->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="FTfp0K0d"></script>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
 
-   <header class="header">
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container"><a href="#contact" class="navbar-brand scrollTo"> <h4>Contact Sam</h4></a>
-          <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="fa fa-bars"></span></button>
-          <div id="navbarcollapse" class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a href="index.html" class="nav-link link-scroll">Home</a></li>
-           </ul>
-          </div>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
+            <div class="col-lg-6 px-5 text-start">
+                <small><i class="fa fa-map-marker-alt me-2"></i>Umumba Ndiaga Ugwuaji Awk, Enugu Nigeria</small>
+                <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@atufoundation.com</small>
+            </div>
+            <div class="col-lg-6 px-5 text-end">
+                <small>Follow us:</small>
+                <a class="text-white-50 ms-3" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="text-white-50 ms-3" href=""><i class="fab fa-twitter"></i></a>
+                <a class="text-white-50 ms-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                <a class="text-white-50 ms-3" href=""><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-      </nav>
-   </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+            <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+                <h1 class="fw-bold text-primary m-0">ATU<span class="text-white">Foundation</span></h1>
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Departments</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="education.html" class="dropdown-item">Education</a>
+                            <a href="sports.html" class="dropdown-item">Sports and Youth Development</a>
+                            <a href="health.html" class="dropdown-item">Health</a>
+                            <a href="charity.html" class="dropdown-item active">Charity and Community Outreach</a>
+                              </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <div class="d-none d-lg-flex ms-2">
+                    <a class="btn btn-outline-primary py-2 px-3" href="index.html#donate">
+                        Donate Now
+                        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+      <!-- Page Header Start -->
+      <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-4 text-white animated slideInDown mb-4">Community Outreach</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Departments</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Community Service</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+<!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+	
 
 	<!-- <section id="intro" style="background: url(img/Chimaobi_Atu.jpg) center center no-repeat; background-size: cover; opacity: 0.5;" class="intro-section pb-2"> -->
       
