@@ -358,96 +358,196 @@ main {
 	
 	
 	
-	<form id="sheetdb-form" method="post" action="https://sheetdb.io/api/v1/vgbvme3cgb2jt">
-  <div class="row g-3">
+	<div class="container">
+  <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="form-floating">
-        <input type="text" class="form-control" id="first-name" name="first-name" placeholder="Your First Name" required>
-        <label for="first-name">Your First Name</label>
-      </div>
+      <form id="sheetdb-form" method="post" action="https://sheetdb.io/api/v1/vgbvme3cgb2jt">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="first-name" name="first-name" placeholder="Your First Name" required>
+              <label for="first-name">Your First Name</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="surname" name="surname" placeholder="Your Surname" required>
+              <label for="surname">Your Surname</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="phone-number" name="phone-number" placeholder="Your Phone Number" required>
+              <label for="phone-number">Your Phone Number</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+              <label for="email">Your Email</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="address" name="address" placeholder="Your Address" required>
+              <label for="address">Your Address</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <select name="gender" id="gender" class="form-control" required>
+                <option value="">Gender *</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <label for="gender">Gender</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <select name="age-bracket" id="age-bracket" class="form-control" required>
+                <option value="">Select Age Range *</option>
+                <option value="15-19">15-19</option>
+                <option value="20-24">20-24</option>
+              </select>
+              <label for="age-bracket">Age Bracket</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <select name="LGA" id="lga" class="form-control" required>
+                <option value="">Select your Local Government Area *</option>
+                <option value="Enugu North">Enugu North</option>
+                <option value="Enugu South">Enugu South</option>
+              </select>
+              <label for="lga">Local Government Area</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <select name="Political-ward" id="ward" class="form-control" required>
+                <option value="">Select your Ward *</option>
+              </select>
+              <label for="ward">Ward</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <textarea name="Pooling-unit" class="form-control" placeholder="Pooling Unit" rows="4" required></textarea>
+              <label for="Pooling-unit">Pooling Unit</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input type="file" name="Passport" accept=".jpg, .jpeg, .png, .gif" class="form-control" required>
+            <small class="form-text text-muted">Upload your picture (JPG, JPEG, PNG, GIF) *</small>
+          </div>
+          <div class="col-12 text-center">
+            <button class="btn btn-primary py-2 px-3 me-3" id="submit">Send Message
+              <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <input type="text" class="form-control" id="surname" name="surname" placeholder="Your Surname" required>
-        <label for="surname">Your Surname</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <input type="text" class="form-control" id="phone-number" name="phone-number" placeholder="Your Phone Number" required>
-        <label for="phone-number">Your Phone Number</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-        <label for="email">Your Email</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <input type="text" class="form-control" id="address" name="address" placeholder="Your Address" required>
-        <label for="address">Your Address</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <select name="gender" id="gender" class="form-control" required>
-          <option value="">Gender *</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        <label for="gender">Gender</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <select name="age-bracket" id="age-bracket" class="form-control" required>
-          <option value="">Select Age Range *</option>
-          <option value="15-19">15-19</option>
-          <option value="20-24">20-24</option>
-        </select>
-        <label for="age-bracket">Age Bracket</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <select name="LGA" id="lga" class="form-control" required>
-          <option value="">Select your Local Government Area *</option>
-          <option value="Enugu North">Enugu North</option>
-          <option value="Enugu South">Enugu South</option>
-        </select>
-        <label for="lga">Local Government Area</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <select name="Political-ward" id="ward" class="form-control" required>
-          <option value="">Select your Ward *</option>
-        </select>
-        <label for="ward">Ward</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-floating">
-        <textarea name="Pooling-unit" class="form-control" placeholder="Pooling Unit" rows="4" required></textarea>
-        <label for="Pooling-unit">Pooling Unit</label>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <input type="file" name="Passport" accept=".jpg, .jpeg, .png, .gif" class="form-control" required>
-      <small class="form-text text-muted">Upload your picture (JPG, JPEG, PNG, GIF) *</small>
-    </div>
-    <div class="col-12">
+  </div>
+</div>
+
+<script>
+  // Create a mapping of LGAs to wards
+  const lgaWardMapping = {
+    "Enugu North": [
+      "Ward 1 ASATA TOWNSHIP",
+      "Ward 2 UMUNEVO",
+      "Ward 3 IHEWUZI",
+      "Ward 4 ONU-ASATA",
+      "Ward 5 OGBETTE EAST",
+      "Ward 6 OGBETTE WEST",
+      "Ward 7 G.R.A",
+      "Ward 8 OGUI NEW LAYOUT",
+      "Ward 9 CHINA TOWN",
+      "Ward 10 NEW HAVEN",
+      "Ward 11 INDEPENDENCE LAYOUT",
+      "Ward 12 UDI SIDING/IVA VALLEY",
+      "Ward 13 OGUI TOWNSHIP"
+    ],
+    "Enugu South": [
+      "Ward 1 AMECHI I",
+      "Ward 2 AMECHI II",
+      "Ward 3 OBEAGU",
+      "Ward 4 UWANI EAST",
+      "Ward 5 UWANI WEST",
+      "Ward 6 ACHARA LAYOUT EAST",
+      "Ward 7 ACHARA LAYOUT WEST",
+      "Ward 8 AWKUNANAW EAST",
+      "Ward 9 AWKUNANAW WEST",
+      "Ward 10 UGWUAJI",
+      "Ward 11 OBEAGU II",
+      "Ward 12 AKWUKE",
+      "Ward 13 MARYLAND"
+    ]
+  };
+
+  const lgaSelect = document.getElementById("lga");
+  const wardSelect = document.getElementById("ward");
+
+  lgaSelect.addEventListener("change", function () {
+    const selectedLGA = lgaSelect.value;
+    wardSelect.innerHTML = "<option value=''>Select your Ward *</option>";
+
+    if (selectedLGA in lgaWardMapping) {
+      const wards = lgaWardMapping[selectedLGA];
+      wards.forEach((ward) => {
+        const option = document.createElement("option");
+        option.value = ward;
+        option.textContent = ward;
+        wardSelect.appendChild(option);
+      });
+    }
+  });
+</script>
+<div class="col-md-12">
+	<textarea name="Pooling-unit" placeholder="What is your Pooling Unit, Describe where you vote during elections*" rows="4" required="required" class="form-control"></textarea>
+</div>
+
+                  
+                 <!-- <div class="col-md-12">
+                    <textarea name="Bill-Motion" placeholder="Suggest a Bill/Motion" rows="4" class="form-control"></textarea>
+                  </div>
+
+                  <div class="col-md-12">
+                    <textarea name="message" placeholder="Any Message for Me?" rows="4" required="required" class="form-control"></textarea>
+                  </div> -->
+
+			<!-- picture upload -->
+<div class="col-md-6">
+  <input type="file" name="Passport" accept=".jpg, .jpeg, .png, .gif" class="form-control" required>
+  <small class="form-text text-muted">Upload picture showing your face clearly (JPG, JPEG, PNG, GIF) *</small>
+</div>
+ <div class="col-12">
       <button class="btn btn-primary py-2 px-3 me-3" id="submit">Send Message
         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
           <i class="fa fa-arrow-right"></i>
         </div>
       </button>
-    </div>
-  </div>
-</form>
-
+                 <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-outline-primary" id="submit">Send message</button>
+                </div>
+              </div>
+	       </div>
+            </form>
+		  
+          </div>
+        </div>
+       </div>
+	</div>
+          </div>
+         </div>
+          </div>
+        </div>
+      </div>
+</section>
 	
 	
 	
