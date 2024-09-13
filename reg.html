@@ -55,7 +55,11 @@ main {
 #submit:hover{
 	background-color: #26d48c;
 }
-  </style>
+ .required {
+    color: red;
+}
+
+</style>
 </head> 
 
 <body>
@@ -148,8 +152,6 @@ main {
         <!--<div data-animate="fadeInRight" class="logo"><img src="img/NA.jpg" alt="logo" width="300"></div>-->
      <p></p>
           <h1 data-animate="fadeInDown" class="text-shadow mb-2">Maka Ọ di nma Ndi Be Anyị</h1>
-        <p></p>
-        <p data-animate="slideInDown" class="h3 text-shadow text-500">Register and contact me in order to effectively represent you</p>
           </div>
 	</section>
 
@@ -172,75 +174,45 @@ main {
                <div class="controls">
                 <div class="row">
                  <div class="col-md-6 mb-3">
-		   <input type="text" name="first-name" placeholder="Enter Firstname *" required="required" class="form-control">
+		   <div class="col-md-6 mb-3">
+		  <input type="text" name="surname" placeholder="Enter Surname" required="required" class="form-control">
+                  </div>
+		  <input type="text" name="first-name" placeholder="Enter Firstname " required="required" class="form-control">
                   </div>
                 <div class="col-md-6 mb-3">
-		  <input type="text" name="surname" placeholder="Enter Lastname *" required="required" class="form-control">
+		  <input type="text" name="other" placeholder="Enter Othername" class="form-control">
                   </div>
                 <div class="col-md-6 mb-3">
-			<input type="text" name="phone-number" placeholder="Enter Phone Number *" required="required" class="form-control">
+			<input type="text" name="phone-number" placeholder="Enter Phone Number " required="required" class="form-control">
                   </div>
                  <div class="col-md-6 mb-3">
-			 <input type="text" name="email" placeholder="Enter Email Address *" required="required" class="form-control">
+			 <input type="text" name="email" placeholder="Enter Email Address " required="required" class="form-control">
                   </div>
                 <div class="col-md-6 mb-3">
-			<input type="text" name="address" placeholder="Where do you Live *" required="required" class="form-control">
+			<input type="text" name="address" placeholder="Where do you Live " required="required" class="form-control">
                 </div>
 
                   
  <div class="col-md-6 mb-3">
 	 <select name="gender" required="required" class="form-control">
-    <option value="">Gender *</option>
+    <option value="">Select Gender</option>
     <option value="male">Male</option>
     <option value="female">Female</option>
       </select>
          </div>
 
-    <div class="col-md-6 mb-3">
+   <div class="col-md-6 mb-3">
+    <label for="dob">Select Date of Birth <span class="required">*</span></label>
+    <input type="date" id="dob" name="dob" required="required" class="form-control">
+</div>
+
+		<div class="col-md-6 mb-3">
 	    <select name="age-bracket" required="required" class="form-control">
     <option value="">Select Age Range *</option>
     <option value="15-19">15-19</option>
     <option value="20-24">20-24</option>
      </select>
        </div>
-
-  <!-- <div class="col-md-6">
-  <select name="education" required="required" class="form-control">
-    <option value="">Select Highest Education Attained *</option>
-    <option value="Uneducated">Uneducated</option>
-    <option value="Primary School">Primary School</option>
-    <option value="Secondary School">Secondary School</option>
-    <option value="Undergraduate">Undergraduate</option>
-    <option value="NCE/OND">NCE/OND</option>
-    <option value="BSc/HND">BSc/HND</option>
-    <option value="Post Graduate">Post Graduate</option>
-  </select>
-</div> 
-
-                  
-<div class="col-md-6">
-  <select name="occupation" required="required" class="form-control">
-    <option value="">Select Occupation *</option>
-    <option value="Artisan (Ọrụ Aka)">Artisan (Ọrụ Aka)</option>
-    <option value="Business">Business</option>
-    <option value="Civil Servant (salary earner)">Civil Servant (salary earner)</option>
-    <option value="Farmer">Farmer</option>
-    <option value="Student">Student</option>
-    <option value="Unemployed">Unemployed</option>
-  </select>
-</div>
-
- <div class="col-md-6">
-  <select name="intervention-area" class="form-control">
-    <option value="">Select Intervention area you desire</option>
-    <option value="Agriculture">Agriculture</option>
-    <option value="Computer/Tech Skills">Computer/Tech Skills</option>
-    <option value="Skill Acquisition (imu ọrụ aka)">Skill Acquisition (imu ọrụ aka)</option>
-    <option value="Business Support">Business Support</option>
-    <option value="Sports">Sports</option>
-    <option value="Education: Scholarship, Loan/Grant">Education: Scholarship, Loan/Grant</option>
-  </select>
- </div> -->
 
 
 
@@ -322,14 +294,6 @@ main {
 	<textarea name="Pooling-unit" placeholder="What is your Pooling Unit, Describe where you vote during elections*" rows="4" required="required" class="form-control"></textarea>
 </div>
 
-                  
-                 <!-- <div class="col-md-12">
-                    <textarea name="Bill-Motion" placeholder="Suggest a Bill/Motion" rows="4" class="form-control"></textarea>
-                  </div>
-
-                  <div class="col-md-12">
-                    <textarea name="message" placeholder="Any Message for Me?" rows="4" required="required" class="form-control"></textarea>
-                  </div> -->
 
 			<!-- picture upload --
 <div class="col-md-6">
