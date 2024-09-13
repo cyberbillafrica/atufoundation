@@ -156,15 +156,15 @@ main {
    <section id="contact" data-animate="bounceIn" class="contact-section contact">
       <div class="container">
         <header class="text-center">
-          <h2 class="title" style="color: #26d48c;">Contact me</h2>
+          <h2 class="title" style="color: #26d48c;">Register for Our Interventions</h2>
 	</header>
 	
 
 
 	<section>
-		<header class="text-center">
+		<!-- <header class="text-center">
           <h6 data-animate="fadeInDown" class="title" style="color: #26d48c; font-size: 18px;">Register for Our Interventions</a></h6>
-		</header>
+		</header> -->
 
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -245,7 +245,7 @@ main {
 
 
 <!-- HTML -->
-<div class="col-md-6">
+  <div class="col-md-6 mb-3">
   <select name="LGA" id="lga" class="form-control" required>
     <option value="">Select your Local Government Area *</option>
     <option value="Enugu North">Enugu North</option>
@@ -254,7 +254,7 @@ main {
   </select>
 </div>
 
-<div class="col-md-6">
+  <div class="col-md-6 mb-3">
   <select name="Political-ward" id="ward" class="form-control" required>
     <option value="">Select your Ward *</option>
     <!-- Wards will be populated dynamically using JavaScript -->
@@ -331,15 +331,18 @@ main {
                     <textarea name="message" placeholder="Any Message for Me?" rows="4" required="required" class="form-control"></textarea>
                   </div> -->
 
-			<!-- picture upload -->
+			<!-- picture upload --
 <div class="col-md-6">
   <input type="file" name="Passport" accept=".jpg, .jpeg, .png, .gif" class="form-control" required>
   <small class="form-text text-muted">Upload picture showing your face clearly (JPG, JPEG, PNG, GIF) *</small>
-</div>
+</div> -->
 
-                 <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-outline-primary" id="submit">Send message</button>
-                </div>
+                <div class="col-12">
+      <button class="btn btn-primary py-2 px-3 me-3" id="submit">Submit
+        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+      </button>
               </div>
 	       </div>
             </form>
