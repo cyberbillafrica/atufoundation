@@ -173,53 +173,55 @@ main {
            <form name="contact-form" id="sheetdb-form" method="post" action="https://sheetdb.io/api/v1/vgbvme3cgb2jt">
                <div class="controls">
                 <div class="row">
-                 <div class="col-md-6 mb-3">
-		   <div class="col-md-6 mb-3">
-		  <input type="text" name="surname" placeholder="Enter Surname" required="required" class="form-control">
-                  </div>
-		  <input type="text" name="first-name" placeholder="Enter Firstname " required="required" class="form-control">
-                  </div>
-                <div class="col-md-6 mb-3">
-		  <input type="text" name="other" placeholder="Enter Othername" class="form-control">
-                  </div>
-                <div class="col-md-6 mb-3">
-			<input type="text" name="phone-number" placeholder="Enter Phone Number " required="required" class="form-control">
-                  </div>
-                 <div class="col-md-6 mb-3">
-			 <input type="text" name="email" placeholder="Enter Email Address " required="required" class="form-control">
-                  </div>
-                <div class="col-md-6 mb-3">
-			<input type="text" name="address" placeholder="Where do you Live " required="required" class="form-control">
-                </div>
+                   <div class="col-md-6 mb-3">
+    <label for="surname">Surname <span class="required">*</span></label>
+    <input type="text" id="surname" name="surname" placeholder="Enter Surname" required="required" class="form-control">
+</div>
 
-                  
- <div class="col-md-6 mb-3">
-	 <select name="gender" required="required" class="form-control">
-    <option value="">Select Gender</option>
-    <option value="male">Male</option>
-    <option value="female">Female</option>
-      </select>
-         </div>
+<div class="col-md-6 mb-3">
+    <label for="first-name">First Name <span class="required">*</span></label>
+    <input type="text" id="first-name" name="first-name" placeholder="Enter Firstname" required="required" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+    <label for="other">Other Name</label>
+    <input type="text" id="other" name="other" placeholder="Enter Othername" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+    <label for="phone-number">Phone Number <span class="required">*</span></label>
+    <input type="text" id="phone-number" name="phone-number" placeholder="Enter Phone Number" required="required" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+    <label for="email">Email Address <span class="required">*</span></label>
+    <input type="text" id="email" name="email" placeholder="Enter Email Address" required="required" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+    <label for="address">Address <span class="required">*</span></label>
+    <input type="text" id="address" name="address" placeholder="Where do you live?" required="required" class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+    <label for="gender">Gender <span class="required">*</span></label>
+    <select id="gender" name="gender" required="required" class="form-control">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+</div>
 
    <div class="col-md-6 mb-3">
     <label for="dob">Select Date of Birth <span class="required">*</span></label>
     <input type="date" id="dob" name="dob" required="required" class="form-control">
 </div>
 
-		<div class="col-md-6 mb-3">
-	    <select name="age-bracket" required="required" class="form-control">
-    <option value="">Select Age Range *</option>
-    <option value="15-19">15-19</option>
-    <option value="20-24">20-24</option>
-     </select>
-       </div>
-
-
 
 <!-- HTML -->
   <div class="col-md-6 mb-3">
   <select name="LGA" id="lga" class="form-control" required>
-    <option value="">Select your Local Government Area *</option>
+    <option value="">Select your Local Government Area</option>
     <option value="Enugu North">Enugu North</option>
     <option value="Enugu South">Enugu South</option>
     <!-- Add more LGAs as needed -->
