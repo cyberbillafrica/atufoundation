@@ -1,0 +1,224 @@
+<html><head><base href="https://studentscholarship.org/registration/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Scholarship Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+        color: #333;
+    }
+    h1 {
+        text-align: center;
+    }
+    form {
+        display: grid;
+        gap: 15px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input, select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    .attestation {
+        margin-top: 30px;
+        border-top: 2px solid #333;
+        padding-top: 20px;
+    }
+    .signature-line {
+        border-top: 1px solid #000;
+        margin-top: 50px;
+        padding-top: 5px;
+    }
+    @media print {
+        .no-print {
+            display: none;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Student Scholarship Registration Form</h1>
+    <form id="scholarshipForm">
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="school">Name of School:</label>
+        <input type="text" id="school" name="school" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="lga">Local Government Area (LGA):</label>
+        <input type="text" id="lga" name="lga" required>
+
+        <label for="ward">Political Ward:</label>
+        <input type="text" id="ward" name="ward" required>
+
+        <div>
+            <button type="submit" id="submitBtn" class="no-print">Submit and Generate Form</button>
+        </div>
+    </form>
+
+    <div id="generatedForm" style="display:none;">
+        <h2>Scholarship Application Form</h2>
+        <p><strong>Surname:</strong> <span id="printSurname"></span></p>
+        <p><strong>First Name:</strong> <span id="printFirstName"></span></p>
+        <p><strong>Phone Number:</strong> <span id="printPhone"></span></p>
+        <p><strong>Email:</strong> <span id="printEmail"></span></p>
+        <p><strong>Address:</strong> <span id="printAddress"></span></p>
+        <p><strong>School:</strong> <span id="printSchool"></span></p>
+        <p><strong>Gender:</strong> <span id="printGender"></span></p>
+        <p><strong>Local Government Area:</strong> <span id="printLga"></span></p>
+        <p><strong>Political Ward:</strong> <span id="printWard"></span></p>
+
+        <div class="attestation">
+            <h3>Principal's Attestation</h3>
+            <p>I hereby attest that the above-named student is currently enrolled in our school and the information provided is accurate to the best of my knowledge.</p>
+            <p>
+                <strong>Principal's Name:</strong> <span class="signature-line"></span><br>
+                <strong>Signature:</strong> <span class="signature-line"></span><br>
+                <strong>Date:</strong> <span class="signature-line"></span><br>
+            </p>
+        </div>
+        
+        <div class="no-print" style="margin-top: 20px;">
+            <button type="button" id="printBtn">Print Form</button>
+            <button type="button" id="downloadBtn">Download Form</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Function to handle form submission and generation
+function handleFormSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const data = new FormData(form);
+    
+    // Send data to Google Sheet
+    fetch('https://script.google.com/macros/s/AKfycbyqO0I7h9Ge3fQP6qQo22k1dR2aM2mTfBh2CJgObduQTXv2XPT7BjS0fZyNDfiplvfo/exec', {
+        method: 'POST',
+        body: data
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        alert('Form submitted successfully!');
+        populateGeneratedForm();
+        document.getElementById('generatedForm').style.display = 'block';
+        document.getElementById('scholarshipForm').style.display = 'none';
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+}
+
+// Function to populate generated form
+function populateGeneratedForm() {
+    document.getElementById('printSurname').textContent = document.getElementById('surname').value;
+    document.getElementById('printFirstName').textContent = document.getElementById('firstName').value;
+    document.getElementById('printPhone').textContent = document.getElementById('phone').value;
+    document.getElementById('printEmail').textContent = document.getElementById('email').value;
+    document.getElementById('printAddress').textContent = document.getElementById('address').value;
+    document.getElementById('printSchool').textContent = document.getElementById('school').value;
+    document.getElementById('printGender').textContent = document.getElementById('gender').value;
+    document.getElementById('printLga').textContent = document.getElementById('lga').value;
+    document.getElementById('printWard').textContent = document.getElementById('ward').value;
+}
+
+// Function to download form as PDF
+function downloadForm() {
+    const element = document.getElementById('generatedForm');
+    html2pdf().from(element).save('scholarship_application.pdf');
+}
+
+// Function to print form
+function printForm() {
+    window.print();
+}
+
+// Event listeners
+document.getElementById('scholarshipForm').addEventListener('submit', handleFormSubmit);
+document.getElementById('downloadBtn').addEventListener('click', downloadForm);
+document.getElementById('printBtn').addEventListener('click', printForm);
+
+</script>
+
+<!-- Include html2pdf library for PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body></html>
+
+<!-- Google Apps Script Code (to be deployed as a web app) -->
+<script>
+function doPost(e) {
+  var sheet = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID').getActiveSheet();
+  var data = e.parameter;
+  
+  sheet.appendRow([
+    data.surname,
+    data.firstName,
+    data.phone,
+    data.email,
+    data.address,
+    data.school,
+    data.gender,
+    data.lga,
+    data.ward,
+    new Date() // Timestamp
+  ]);
+  
+  return ContentService.createTextOutput(JSON.stringify({result: 'success'}))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+</script>
