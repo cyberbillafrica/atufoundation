@@ -1,110 +1,91 @@
-<html><head><base href="https://studentscholarship.org/registration/">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Scholarship Registration Form</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 20px;
-        background-color: #f4f4f4;
-    }
-    .container {
-        max-width: 800px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1, h2, h3 {
-        color: #333;
-    }
-    h1 {
-        text-align: center;
-    }
-    form {
-        display: grid;
-        gap: 15px;
-    }
-    label {
-        font-weight: bold;
-    }
-    input, select {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-    button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-right: 10px;
-    }
-    button:hover {
-        background-color: #45a049;
-    }
-    .attestation {
-        margin-top: 30px;
-        border-top: 2px solid #333;
-        padding-top: 20px;
-    }
-    .signature-line {
-        border-top: 1px solid #000;
-        margin-top: 50px;
-        padding-top: 5px;
-    }
-    @media print {
-        .no-print {
-            display: none;
-        }
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Scholarship Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 <div class="container">
     <h1>Student Scholarship Registration Form</h1>
-  <form id="scholarshipForm" method="POST" action="https://script.google.com/macros/s/AKfycbzmLZ7KyJBn9NnB8eW_coQ1ngSbUSRFTA2YUvj9HcwqFNPM_KjREmG_b_16VuqRu06n/exec">
-      <label for="surname">Surname:</label>
-        <input type="text" id="surname" name="surname" required>
+    <form id="scholarshipForm">
+        <div class="controls">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" placeholder="Enter Surname" required="required" class="form-control">
+                </div>
 
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
+                <div class="col-md-6 mb-3">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter First Name" required="required" class="form-control">
+                </div>
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
+                <div class="col-md-6 mb-3">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required="required" class="form-control">
+                </div>
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
+                <div class="col-md-6 mb-3">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Email Address" required="required" class="form-control">
+                </div>
 
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" required>
+                <div class="col-md-6 mb-3">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Where do you live?" required="required" class="form-control">
+                </div>
 
-        <label for="school">Name of School:</label>
-        <input type="text" id="school" name="school" required>
+                <div class="col-md-6 mb-3">
+                    <label for="school">Name of School:</label>
+                    <input type="text" id="school" name="school" placeholder="Which school do you attend?" required="required" class="form-control">
+                </div>
 
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-            <option value="">Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
+                <div class="col-md-6 mb-3">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required="required" class="form-control">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
 
-        <label for="lga">Local Government Area (LGA):</label>
-        <input type="text" id="lga" name="lga" required>
+                <div class="col-md-6 mb-3">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required="required" class="form-control">
+                </div>
 
-        <label for="ward">Political Ward:</label>
-        <input type="text" id="ward" name="ward" required>
+                <div class="col-md-6 mb-3">
+                    <label for="lga">Local Government Area (LGA):</label>
+                    <select name="lga" id="lga" class="form-control" required>
+                        <option value="">Select your Local Government Area</option>
+                        <option value="Enugu North">Enugu North</option>
+                        <option value="Enugu South">Enugu South</option>
+                    </select>
+                </div>
 
-        <div>
-            <button type="submit" id="submitBtn" class="no-print">Submit and Generate Form</button>
+                <div class="col-md-6 mb-3">
+                    <label for="ward">Political Ward:</label>
+                    <select name="ward" id="ward" class="form-control" required>
+                        <option value="">Select your Ward</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12">
+                    <textarea name="pooling-unit" placeholder="Where do you vote during elections?" rows="4" required="required" class="form-control"></textarea>
+                </div>
+
+                <div class="col-12 mb-3 text-center">
+                    <button class="btn btn-primary py-2 px-3 me-3" id="submitBtn">
+                        Submit and Generate Form
+                        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
         </div>
     </form>
 
@@ -129,7 +110,7 @@
                 <strong>Date:</strong> <span class="signature-line"></span><br>
             </p>
         </div>
-        
+
         <div class="no-print" style="margin-top: 20px;">
             <button type="button" id="printBtn">Print Form</button>
             <button type="button" id="downloadBtn">Download Form</button>
@@ -138,35 +119,85 @@
 </div>
 
 <script>
-// Function to handle form submission and generation
+// Create a mapping of LGAs to wards
+const lgaWardMapping = {
+    "Enugu North": [
+        "Ward 1 ASATA TOWNSHIP",
+        "Ward 2 UMUNEVO",
+        "Ward 3 IHEWUZI",
+        "Ward 4 ONU-ASATA",
+        "Ward 5 OGBETTE EAST",
+        "Ward 6 OGBETTE WEST",
+        "Ward 7 G.R.A",
+        "Ward 8 OGUI NEW LAYOUT",
+        "Ward 9 CHINA TOWN",
+        "Ward 10 NEW HAVEN",
+        "Ward 11 INDEPENDENCE LAYOUT",
+        "Ward 12 UDI SIDING/IVA VALLEY",
+        "Ward 13 OGUI TOWNSHIP"
+    ],
+    "Enugu South": [
+        "Ward 1 AMECHI I",
+        "Ward 2 AMECHI II",
+        "Ward 3 OBEAGU",
+        "Ward 4 UWANI EAST",
+        "Ward 5 UWANI WEST",
+        "Ward 6 ACHARA LAYOUT EAST",
+        "Ward 7 ACHARA LAYOUT WEST",
+        "Ward 8 AWKUNANAW EAST",
+        "Ward 9 AWKUNANAW WEST",
+        "Ward 10 UGWUAJI",
+        "Ward 11 OBEAGU II",
+        "Ward 12 AKWUKE",
+        "Ward 13 MARYLAND"
+    ]
+};
+
+const lgaSelect = document.getElementById("lga");
+const wardSelect = document.getElementById("ward");
+
+lgaSelect.addEventListener("change", function () {
+    const selectedLGA = lgaSelect.value;
+    wardSelect.innerHTML = "<option value=''>Select your Ward</option>";
+
+    if (selectedLGA in lgaWardMapping) {
+        const wards = lgaWardMapping[selectedLGA];
+        wards.forEach((ward) => {
+            const option = document.createElement("option");
+            option.value = ward;
+            option.textContent = ward;
+            wardSelect.appendChild(option);
+        });
+    }
+});
+
+// Handle form submission
 function handleFormSubmit(event) {
     event.preventDefault();
-    const form = event.target;
-    const data = new FormData(form);
-    
-    // Send data to Google Sheet
-    fetch('https://script.google.com/macros/s/AKfycbzmLZ7KyJBn9NnB8eW_coQ1ngSbUSRFTA2YUvj9HcwqFNPM_KjREmG_b_16VuqRu06n/exec', {
+    const form = document.getElementById('scholarshipForm');
+    const formData = new FormData(form);
+
+    fetch('https://script.google.com/macros/s/AKfycbyqO0I7h9Ge3fQP6qQo22k1dR2aM2mTfBh2CJgObduQTXv2XPT7BjS0fZyNDfiplvfo/exec', {
         method: 'POST',
-        body: data
+        body: formData
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Success:', data);
         alert('Form submitted successfully!');
         populateGeneratedForm();
         document.getElementById('generatedForm').style.display = 'block';
         document.getElementById('scholarshipForm').style.display = 'none';
     })
-    .catch((error) => {
+    .catch(error => {
         console.error('Error:', error);
         alert('An error occurred. Please try again.');
     });
 }
 
-// Function to populate generated form
+// Populate generated form
 function populateGeneratedForm() {
     document.getElementById('printSurname').textContent = document.getElementById('surname').value;
-    document.getElementById('printFirstName').textContent = document.getElementById('firstName').value;
+    document.getElementById('printFirstName').textContent = document.getElementById('first-name').value;
     document.getElementById('printPhone').textContent = document.getElementById('phone').value;
     document.getElementById('printEmail').textContent = document.getElementById('email').value;
     document.getElementById('printAddress').textContent = document.getElementById('address').value;
@@ -176,50 +207,20 @@ function populateGeneratedForm() {
     document.getElementById('printWard').textContent = document.getElementById('ward').value;
 }
 
-// Function to download form as PDF
-function downloadForm() {
+// Download form as PDF
+document.getElementById('downloadBtn').addEventListener('click', function () {
     const element = document.getElementById('generatedForm');
-    html2pdf().from(element).save('scholarship_application.pdf');
-}
+    html2pdf().from(element).save('Scholarship_Form.pdf');
+});
 
-// Function to print form
-function printForm() {
+// Print form
+document.getElementById('printBtn').addEventListener('click', function () {
     window.print();
-}
+});
 
-// Event listeners
+// Event listener for form submission
 document.getElementById('scholarshipForm').addEventListener('submit', handleFormSubmit);
-document.getElementById('downloadBtn').addEventListener('click', downloadForm);
-document.getElementById('printBtn').addEventListener('click', printForm);
 
 </script>
-
-<!-- Include html2pdf library for PDF generation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 </body>
 </html>
-
-<!-- Google Apps Script Code (to be deployed as a web app) --
-<script>
-function doPost(e) {
-  var sheet = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID').getActiveSheet();
-  var data = e.parameter;
-  
-  sheet.appendRow([
-    data.surname,
-    data.firstName,
-    data.phone,
-    data.email,
-    data.address,
-    data.school,
-    data.gender,
-    data.lga,
-    data.ward,
-    new Date() // Timestamp
-  ]);
-  
-  return ContentService.createTextOutput(JSON.stringify({result: 'success'}))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-</script>
