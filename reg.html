@@ -141,56 +141,41 @@ main {
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
+	 
+
+<!-- Registration Form-->
 	
 
-	<!-- <section id="intro" style="background: url(img/Chimaobi_Atu.jpg) center center no-repeat; background-size: cover; opacity: 0.5;" class="intro-section pb-2"> -->
-      
-
-<!-- Contact-->
-	<section id="intro" style="background: url(img/Chimaobi_Atu.jpg) center center no-repeat; background-size: cover; opacity: 0.8;" class="intro-section pb-2">
-      <div class="container text-center">
-        <!--<div data-animate="fadeInRight" class="logo"><img src="img/NA.jpg" alt="logo" width="300"></div>-->
-     <p></p>
-          <h1 data-animate="fadeInDown" class="text-shadow mb-2">Maka Ọ di nma Ndi Be Anyị</h1>
-          </div>
-	</section>
-
-   <section id="contact" data-animate="bounceIn" class="contact-section contact">
-      <div class="container">
-        <header class="text-center">
+     <header class="text-center">
           <h2 class="title" style="color: #26d48c;">Register for Our Interventions</h2>
 	</header>
 	
 
 
 	<section>
-		<!-- <header class="text-center">
+		<header class="text-center">
           <h6 data-animate="fadeInDown" class="title" style="color: #26d48c; font-size: 18px;">Register for Our Interventions</a></h6>
-		</header> -->
+		</header>
 
         <div class="row">
-          <div class="col-lg-8 mx-auto">
-           <form name="contact-form" id="sheetdb-form" method="post" action="https://sheetdb.io/api/v1/vgbvme3cgb2jt">
-               <div class="controls">
+          <div class="col-lg-8 mx-auto wow fadeIn" data-wow-delay="0.1s">">
+           <form id="dataForm" method="post" action="https://script.google.com/macros/s/AKfycbwjjH-U1QVcfgOzPNz7bxTDPlz0J0kk6JqgzEI-wcW28uM6o2ItGaUBMjYhS4WOqI0G/exec">
+            <div class="controls">
                 <div class="row">
-                   <div class="col-md-6 mb-3">
-    <label for="surname">Surname <span class="required">*</span></label>
+			
+<div class="col-md-6 mb-3">
+   <label for="surname">Surname <span class="required">*</span></label>
     <input type="text" id="surname" name="surname" placeholder="Enter Surname" required="required" class="form-control">
 </div>
 
 <div class="col-md-6 mb-3">
     <label for="first-name">First Name <span class="required">*</span></label>
-    <input type="text" id="first-name" name="first-name" placeholder="Enter Firstname" required="required" class="form-control">
-</div>
-
-<div class="col-md-6 mb-3">
-    <label for="other">Other Name</label>
-    <input type="text" id="other" name="other" placeholder="Enter Othername" class="form-control">
+    <input type="text" id="firstName" name="firstName" placeholder="Enter Firstname" required="required" class="form-control">
 </div>
 
 <div class="col-md-6 mb-3">
     <label for="phone-number">Phone Number <span class="required">*</span></label>
-    <input type="text" id="phone-number" name="phone-number" placeholder="Enter Phone Number" required="required" class="form-control">
+    <input type="text" id="phone" name="phone" placeholder="Enter Phone Number" required="required" class="form-control">
 </div>
 
 <div class="col-md-6 mb-3">
@@ -205,7 +190,7 @@ main {
 			
 <div class="col-md-6 mb-3">
     <label for="address">Name of School <span class="required">*</span></label>
-    <input type="text" id="address" name="address" placeholder="Which School do you Attend?" required="required" class="form-control">
+    <input type="text" id="school" name="school" placeholder="Which School do you Attend?" required="required" class="form-control">
 </div>
 <div class="col-md-6 mb-3">
     <label for="gender">Gender <span class="required">*</span></label>
@@ -226,7 +211,7 @@ main {
 <div class="col-md-6 mb-3">
     <label for="lga">Local Government Area (LGA) <span class="required">*</span></label>
     <select name="LGA" id="lga" class="form-control" required>
-        <option value="">Select your Local Government Area ↓</option>
+        <option value="">Select your Local Government Area</option>
         <option value="Enugu North">Enugu North</option>
         <option value="Enugu South">Enugu South</option>
         <!-- Add more LGAs as needed -->
@@ -236,7 +221,7 @@ main {
 <div class="col-md-6 mb-3">
     <label for="ward">Political Ward <span class="required">*</span></label>
     <select name="Political-ward" id="ward" class="form-control" required>
-        <option value="">Select your Ward ↓</option>
+        <option value="">Select your Ward</option>
         <!-- Wards will be populated dynamically using JavaScript -->
     </select>
 </div>
@@ -299,18 +284,7 @@ main {
   });
 </script>
                   
-<div class="col-md-12">
-	<textarea name="Pooling-unit" placeholder="What is your Pooling Unit, Describe where you vote during elections*" rows="4" required="required" class="form-control"></textarea>
-</div>
-
-
-			<!-- picture upload --
-<div class="col-md-6">
-  <input type="file" name="Passport" accept=".jpg, .jpeg, .png, .gif" class="form-control" required>
-  <small class="form-text text-muted">Upload picture showing your face clearly (JPG, JPEG, PNG, GIF) *</small>
-</div> -->
-
-               <div class="col-12 mb-3 text-center">
+ <div class="text-center">
     <button class="btn btn-primary py-2 px-3 me-3" id="submit">
         Submit
         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
@@ -318,9 +292,8 @@ main {
         </div>
     </button>
 </div>
-
-	       </div>
-            </form>
+ </div>  
+</form>
 		  
           </div>
         </div>
@@ -421,7 +394,26 @@ main {
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="main.js"></script>
+    <script src="mai.js"></script>
+
+<script>
+    document.getElementById('dataForm').onsubmit = function(event) {
+      event.preventDefault();
+      
+      // Fetch API to submit the form data via POST
+      fetch('https://script.google.com/macros/s/AKfycbwjjH-U1QVcfgOzPNz7bxTDPlz0J0kk6JqgzEI-wcW28uM6o2ItGaUBMjYhS4WOqI0G/exec', {
+        method: 'POST',
+        body: new FormData(document.getElementById('dataForm'))
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.result);
+      })
+      .catch(error => {
+        alert('Error submitting data: ' + error);
+      });
+    };
+  </script>
 
 </body>
 
