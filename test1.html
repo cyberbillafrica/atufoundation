@@ -6,7 +6,7 @@
 <body>
   <h2>Submit Your Information</h2>
 
-  <form id="dataForm" method="post" action="https://script.google.com/macros/s/YOUR_SCRIPT_URL/exec">
+  <form id="dataForm" method="post" action="https://script.google.com/macros/s/AKfycbxO9-MjkGlnFhdcvbjZy2GoaNBYV7TElhp_4cfgmSmsaguoaf5HCEM8cXGY7n640r-i/exec">
     <label for="surname">Surname:</label><br>
     <input type="text" id="surname" name="surname" required><br><br>
 
@@ -46,7 +46,7 @@
       event.preventDefault();
       
       // Fetch API to submit the form data via POST
-      fetch('https://script.google.com/macros/s/YOUR_SCRIPT_URL/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbxO9-MjkGlnFhdcvbjZy2GoaNBYV7TElhp_4cfgmSmsaguoaf5HCEM8cXGY7n640r-i/exec', {
         method: 'POST',
         body: new FormData(document.getElementById('dataForm'))
       })
