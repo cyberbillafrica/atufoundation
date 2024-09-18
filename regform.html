@@ -163,6 +163,23 @@
         </form>
     </div>
 </div>
-
+<script>
+    document.getElementById('dataForm').onsubmit = function(event) {
+      event.preventDefault();
+      
+      // Fetch API to submit the form data via POST
+      fetch('https://script.google.com/macros/s/AKfycbxO9-MjkGlnFhdcvbjZy2GoaNBYV7TElhp_4cfgmSmsaguoaf5HCEM8cXGY7n640r-i/exec', {
+        method: 'POST',
+        body: new FormData(document.getElementById('dataForm'))
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.result);
+      })
+      .catch(error => {
+        alert('Error submitting data: ' + error);
+      });
+    };
+  </script>
 </body>
 </html>
