@@ -14,8 +14,8 @@
 	</header>
       <div class="row">
     <div class="col-lg-8 mx-auto">
-        <form name="submit-form" id="submit-form" method="post" action="https://script.google.com/macros/s/AKfycbzuWxKP3tiR-8uhl3rzsOl0eLNE5fOtOxSGEPsG2xzafcVko1TLIneA9bHGGuJ4uFcI/exec/exec">
-            <div class="controls">
+        <form id="dataForm" method="post" action="https://script.google.com/macros/s/AKfycbxO9-MjkGlnFhdcvbjZy2GoaNBYV7TElhp_4cfgmSmsaguoaf5HCEM8cXGY7n640r-i/exec">
+       <div class="form-control">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="surname">Surname <span class="required">*</span></label>
@@ -24,7 +24,7 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="first-name">First Name <span class="required">*</span></label>
-                        <input type="text" id="first-name" name="first-name" placeholder="Enter Firstname" required="required" class="form-control">
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter Firstname" required="required" class="form-control">
                     </div>
 
                     <div class="col-md-6 mb-3">
@@ -34,7 +34,7 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="phone-number">Phone Number <span class="required">*</span></label>
-                        <input type="text" id="phone-number" name="phone-number" placeholder="Enter Phone Number" required="required" class="form-control">
+                        <input type="text" id="phone" name="phone" placeholder="Enter Phone Number" required="required" class="form-control">
                     </div>
 
                     <div class="col-md-6 mb-3">
@@ -47,10 +47,18 @@
                         <input type="text" id="address" name="address" placeholder="Where do you live?" required="required" class="form-control">
                     </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label for="school">Name of School <span class="required">*</span></label>
-                        <input type="text" id="school" name="school" placeholder="Which School do you Attend?" required="required" class="form-control">
-                    </div>
+<div class="col-md-6 mb-3">
+    <label for="school">Name of School <span class="required">*</span></label>
+    <select id="school" name="school" required class="form-control">
+        <option value="">Select a School</option>
+        <option value="School 1">School 1</option>
+        <option value="School 2">School 2</option>
+        <option value="School 3">School 3</option>
+        <option value="School 4">School 4</option>   
+
+        <option value="School 5">School 5</option>
+    </select>   
+</div>
 
                     <div class="col-md-6 mb-3">
                         <label for="gender">Gender <span class="required">*</span></label>
