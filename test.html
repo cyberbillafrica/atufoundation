@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit Data to Google Sheets</title>
+</head>
+<body>
+  <h2>Submit Your Information</h2>
+  
+  <form id="dataForm" method="post" action="https://script.google.com/macros/s/YOUR_SCRIPT_URL/exec">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" required></textarea><br><br>
+
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="phone" name="phone" required><br><br>
+
+    <label for="dob">Date of Birth:</label><br>
+    <input type="date" id="dob" name="dob" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    // Optional: You can add JavaScript for form validation or additional behavior
+    document.getElementById('dataForm').onsubmit = function() {
+      alert('Form submitted successfully!');
+    };
+  </script>
+</body>
+</html>
