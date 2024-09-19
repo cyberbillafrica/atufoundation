@@ -1,35 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Submit Data to Google Sheets</title>
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <meta property="og:title" content="Atu Foundation">
+    <meta property="og:description" content="Join hands with us as we extend the helping hands to our communities.">
+    <meta property="og:image" content="img/mrsatu.jpg">
+    <meta property="og:url" content="https://cyberbillafrica.github.io/honatu">
+
+    <!-- Favicon -->
+    <link href="img/icon-3.png" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .attestation {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+
+        .required {
+            color: red;
+        }
+
+        /* Hides other elements during printing */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+
+            #generatedForm,
+            #generatedForm * {
+                visibility: visible;
+            }
+
+            #generatedForm {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <h2>Submit Your Information</h2>
-  
-  <form id="dataForm" method="post" action="https://script.google.com/macros/s/AKfycbwNNPKXm7aDNl3Y4W_43ooc0Vhu9TAEWtFa2Sc0oWzXZkTet6tlwHYvRlHwe4UGrSU-/exec">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <!-- Your existing HTML structure (navbar, header, etc.) -->
 
-    <label for="address">Address:</label><br>
-    <textarea id="address" name="address" required></textarea><br><br>
+    <!-- Registration Form-->
+    <section>
+        <header class="text-center">
+            <h2 class="title" style="color: #26d48c;">Chimaobi Sam Atu Foundation 2024 SSCE Scholarship Registration Form</h2>
+            <div class="col-12 mb-3">
+                <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
+                    <h4>Instructions:</h4>
+                    <ol>
+                        <li>Fill in your details in the form below correctly.</li>
+                        <li>Click <b>Submit</b> and allow the system to generate your Data and additional Attestation Page.</li>
+                        <li>Print (or download to print later) the resulting document and take it to your school Principal for attestation.</li>
+                        <li>Return the completed form to the Foundation Address at </li>
+                    </ol>
+                </div>
+            </div>
+        </header>
 
-    <label for="phone">Phone Number:</label><br>
-    <input type="tel" id="phone" name="phone" required><br><br>
+        <div class="text-center">
+            <h6 class="title" style="color: red;">Note that submitting wrong/false information automatically disqualifies you from the programme and your application will not be considered</h6>
+        </div>
 
-    <label for="dob">Date of Birth:</label><br>
-    <input type="date" id="dob" name="dob" required><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto wow fadeIn" data-wow-delay="0.1s">
+                    <h3 style="color: #45a049; text-align: center;">Sam Atu Foundation 2024 SSCE Scholarship Registration Form</h3>
+                    <form id="scholarshipForm">
+                        <label for="surname">Surname *</label>
+                        <input type="text" id="surname" name="surname" required>
 
-    <input type="submit" value="Submit">
-  </form>
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
 
-  <script>
-    // Optional: You can add JavaScript for form validation or additional behavior
-    document.getElementById('dataForm').onsubmit = function() {
-      alert('Form submitted successfully!');
-    };
-  </script>
+                        <label for="phone">Phone Number *</label>
+                        <input type="text" id="phone" name="phone" required>
+
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="address">Address *</label>
+                        <input type="text" id="address" name="address" required>
+
+                        <label for="school">School *</label>
+                        <select id="school" name="school" required>
+                            <option value="">Select a School</option>
+                            <option value="School 1">School 1</option>
+                            <option value="School 2">School 2</option>
+                            <option value="School 3">School 3</option>
+                            <option value="School 4">School 4</option>
+                            <option value="School 5">School 5</option>
+                        </select>
+
+                        <label for="gender">Gender *</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+
+                        <label for="dob">Date of Birth *</label>
+                        <input type="date" id="dob" name="dob" required>
+
+                        <label for="lga">Local Government Area *</label>
+                        <input type="text" id="lga" name="lga" required>
+
+                        <label for="ward">Ward *</label>
+                        <input type="text" id="ward" name="ward" required>
+
+                        <button type="submit" id="submitBtn">Submit and Generate Form</button>
+                    </form>
+
+                    <div id="generatedForm" style="display:none;">
+                        <h2>Scholarship Application Form</h2>
+                        <p><strong>Surname:</strong> <span id="printSurname"></span></p>
+                        <p><strong>First Name:</strong> <span id="printFirstName"></span></p>
+                        <p><strong>Phone Number:</strong> <span id="printPhone"></span></p>
+                        <p><strong>Email:</strong> <span id="printEmail"></span></p>
+                        <p><strong>Address:</strong> <span id="printAddress"></span></p>
+                        <p><strong>School:</strong> <span id="printSchool"></span></p>
+                        <p><strong>Gender:</strong> <span id="printGender"></span></p>
+                        <p><strong>Date of Birth:</strong> <span id="printdob"></span></p>
+                        <p><strong>LGA:</strong> <span id="printLga"></span></p>
+                        <p><strong>Ward:</strong> <span id="printWard"></span></p>
+
+                        <div class="attestation">
+                            <h3>Principal's Attestation</h3>
+                            <p>I hereby attest that the above-named student is currently enrolled in our school and the information provided is accurate to the best of my knowledge.</p>
+                            <p style="line-height: 3;">
+                                <strong>Principal's Name: -----------------------------------------------------------------------------------------</strong><br>
+                                <strong>Sign/Stamp: ------------------------------------------------------------------------------------------------</strong><br>
+                                <strong>Date: -----------------------------------------------------------------------------------------------------</strong><br>
+                            </p>
+                        </div>
+
+                        <div class="no-print" style="margin-top: 20px;">
+                            <button type="button" id="printBtn">Print Form</button>
+                            <button type="button" id="downloadBtn">Download Form</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const data = new FormData(form);
+
+            // Send data to Google Sheet
+            fetch('https://script.google.com/macros/s/AKfycbzKeFHzkEYM2QvytV63oZj4DyTLYUKqfTX5RxD88SqBbaaBeDWdE0NLdctRmESgpx8o7g/exec', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Your Registration is submitted successfully, click OK to print or download your form!');
+
+                // Populate the generated form with the submitted values
+                document.getElementById('printSurname').innerText = data.get('surname');
+                document.getElementById('printFirstName').innerText = data.get('firstName');
+                document.getElementById('printPhone').innerText = data.get('phone');
+                document.getElementById('printEmail').innerText = data.get('email');
+                document.getElementById('printAddress').innerText = data.get('address');
+                document.getElementById('printSchool').innerText = data.get('school');
+                document.getElementById('printGender').innerText = data.get('gender');
+                document.getElementById('printdob').innerText = data.get('dob');
+                document.getElementById('printLga').innerText = data.get('lga');
+                document.getElementById('printWard').innerText = data.get('ward');
+
+                document.getElementById('generatedForm').style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+            });
+        }
+
+        // Attach form submit event listener
+        document.getElementById('scholarshipForm').addEventListener('submit', handleFormSubmit);
+
+        // Print button
+        document.getElementById('printBtn').addEventListener('click', () => {
+            window.print();
+        });
+
+        // Download button (using html2pdf)
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            const element = document.getElementById('generatedForm');
+            html2pdf(element);
+        });
+    </script>
 </body>
+
 </html>
