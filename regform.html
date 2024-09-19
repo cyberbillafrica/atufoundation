@@ -206,100 +206,90 @@ wardSelect.appendChild(option);
         </div>
     </form>
 
-    <div id="generatedForm" style="display:none;">
-        <h2>Scholarship Application Form</h2>
-        <p><strong>Surname:</strong> <span id="printSurname"></span></p>
-        <p><strong>First Name:</strong> <span id="printFirstName"></span></p>
-        <p><strong>Phone Number:</strong> <span id="printPhone"></span></p>
-        <p><strong>Email:</strong> <span id="printEmail"></span></p>
-        <p><strong>Address:</strong> <span id="printAddress"></span></p>
-        <p><strong>School:</strong> <span id="printSchool"></span></p>
-        <p><strong>Gender:</strong> <span id="printGender"></span></p>
-        <p><strong>Local Government Area:</strong> <span id="printLga"></span></p>
-        <p><strong>Political Ward:</strong> <span id="printWard"></span></p>
+     <div id="generatedForm" style="display:none;">
+            <h2>Scholarship Application Form</h2>
+            <p><strong>Surname:</strong> <span id="printSurname"></span></p>
+            <p><strong>First Name:</strong> <span id="printFirstName"></span></p>
+            <p><strong>Phone Number:</strong> <span id="printPhone"></span></p>
+            <p><strong>Email:</strong> <span id="printEmail"></span></p>
+            <p><strong>Address:</strong> <span id="printAddress"></span></p>
+            <p><strong>School:</strong> <span id="printSchool"></span></p>
+            <p><strong>Gender:</strong> <span id="printGender"></span></p>
+            <p><strong>Date of Birth:</strong> <span id="printdob"></span></p>
+            <p><strong>LGA:</strong> <span id="printLga"></span></p>
+            <p><strong>Ward:</strong> <span id="printWard"></span></p>
 
-        <div class="attestation">
-            <h3>Principal's Attestation</h3>
-            <p>I hereby attest that the above-named student is currently enrolled in our school and the information provided is accurate to the best of my knowledge.</p>
-            <p>
-                <strong>Principal's Name:</strong> <span class="signature-line"></span><br>
-                <strong>Signature:</strong> <span class="signature-line"></span><br>
-                <strong>Date:</strong> <span class="signature-line"></span><br>
-            </p>
-        </div>
-        
-        <div class="no-print" style="margin-top: 20px;">
-            <button type="button" id="printBtn">Print Form</button>
-            <button type="button" id="downloadBtn">Download Form</button>
+            <div class="attestation">
+                <h3>Principal's Attestation</h3>
+                <p>I hereby attest that the above-named student is currently enrolled in our school and the information provided is accurate to the best of my knowledge.</p>
+                   <p style="line-height: 3;">
+                        <strong>Principal's Name: -----------------------------------------------------------------------------------------</strong><br>
+                        <strong>Sig/Stamp: ------------------------------------------------------------------------------------------------</strong><br>
+                        <strong>Date: -----------------------------------------------------------------------------------------------------</strong><br>
+                      </p> 
+                  </p>
+            </div>
+
+            <div class="no-print" style="margin-top: 20px;">
+                <button type="button" id="printBtn">Print Form</button>
+                <button type="button" id="downloadBtn">Download Form</button>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-// Function to handle form submission and generation
-function handleFormSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const data = new FormData(form);
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const data = new FormData(form);
 
-    // Send data to Google Sheet
-    fetch('https://script.google.com/macros/s/AKfycbwjjH-U1QVcfgOzPNz7bxTDPlz0J0kk6JqgzEI-wcW28uM6o2ItGaUBMjYhS4WOqI0G/exec', {
-        method: 'POST',
-        body: data
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        alert('Form submitted successfully!');
+            // Send data to Google Sheet
+            fetch('https://script.google.com/macros/s/AKfycbwjjH-U1QVcfgOzPNz7bxTDPlz0J0kk6JqgzEI-wcW28uM6o2ItGaUBMjYhS4WOqI0G/exec', {
+                method: 'POST',
+                body: data
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Your Registration is submitted successfully, click OK to print or download your form!');
 
-        // Populate the generated form
-        populateGeneratedForm();
+                // Populate the generated form with user data
+                document.getElementById('printSurname').textContent = document.getElementById('surname').value;
+                document.getElementById('printFirstName').textContent = document.getElementById('firstName').value;
+                document.getElementById('printPhone').textContent = document.getElementById('phone').value;
+                document.getElementById('printEmail').textContent = document.getElementById('email').value;
+                document.getElementById('printAddress').textContent = document.getElementById('address').value;
+                document.getElementById('printSchool').textContent = document.getElementById('school').value;
+                document.getElementById('printGender').textContent = document.getElementById('gender').value;
+                document.getElementById('printdob').textContent = document.getElementById('dob').value;
+                document.getElementById('printLga').textContent = document.getElementById('lga').value;
+                document.getElementById('printWard').textContent = document.getElementById('ward').value;
 
-        // Show the generated form and hide the original form
-        document.getElementById('generatedForm').style.display = 'block';
-        document.getElementById('scholarshipForm').style.display = 'none';
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again.');
-    });
-}
+                // Display the generated form and hide the original form
+                document.getElementById('generatedForm').style.display = 'block';
+                document.getElementById('scholarshipForm').style.display = 'none';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        }
 
-// Function to populate the generated form with data
-function populateGeneratedForm() {
-    document.getElementById('printSurname').textContent = document.getElementById('surname').value;
-    document.getElementById('printFirstName').textContent = document.getElementById('firstName').value;
-    document.getElementById('printPhone').textContent = document.getElementById('phone').value;
-    document.getElementById('printEmail').textContent = document.getElementById('email').value;
-    document.getElementById('printAddress').textContent = document.getElementById('address').value;
-    document.getElementById('printSchool').textContent = document.getElementById('school').value;
-    document.getElementById('printGender').textContent = document.getElementById('gender').value;
-    document.getElementById('printLga').textContent = document.getElementById('lga').value;
-    document.getElementById('printWard').textContent = document.getElementById('ward').value;
-}
+        // Event listeners
+        document.getElementById('scholarshipForm').addEventListener('submit', handleFormSubmit);
 
-// Function to download form as PDF
-function downloadForm() {
-    const element = document.getElementById('generatedForm');
-    html2pdf()
-      .from(element)
-      .save('scholarship_application.pdf');
-}
+        // Function to download form as PDF
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const element = document.getElementById('generatedForm');
+            html2pdf().from(element).save('scholarship_application.pdf');
+        });
 
-// Function to print form
-function printForm() {
-    window.print();
-}
-
-// Event listeners
-document.getElementById('scholarshipForm').addEventListener('submit', handleFormSubmit);
-document.getElementById('downloadBtn').addEventListener('click', downloadForm);
-document.getElementById('printBtn').addEventListener('click', printForm);
-
-</script>
-
-<!-- Include html2pdf library for PDF generation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+        // Function to print form
+        document.getElementById('printBtn').addEventListener('click', function() {
+            window.print();
+        });
+    </script>
 </body>
 </html>
+
