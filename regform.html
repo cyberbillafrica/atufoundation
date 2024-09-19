@@ -36,10 +36,7 @@
     <link href="css/style.css" rel="stylesheet">
 
 <style> 
-  
-        label {
-            font-weight: bold;
-        
+    
         .attestation {
             margin-top: 30px;
             border-top: 2px solid #333;
@@ -124,11 +121,10 @@
 
 <!-- Registration Form-->
 	
-
+<section>
      <header class="text-center">
           <h2 class="title" style="color: #26d48c;">Chimaobi Sam Atu Foundation 2024 SSCE Scholarship Registration Form</h2>
-	</header>
-
+	
 	<div class="col-12 mb-3">
          <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
  	 <h4>Instructions:</h4>
@@ -140,7 +136,7 @@
 	</ol>
 	 </div>
 	</div>
-		 
+     </header>
 	
 <div class="text-center">
    <h6 class="title" style="color: red;">Note that submitting wrong/false information automatically disqualifies you from the programme and your application will not be considered</h6>
@@ -148,7 +144,10 @@
 	  
   
     <div class="container">
-        <h3 style="color: #45a049; text-align: center;">Sam Atu Foundation 2024 SSCE Scholarship Registration Form</h3>  <form id="scholarshipForm">
+	    <div class="row">
+          <div class="col-lg-8 mx-auto wow fadeIn" data-wow-delay="0.1s">
+        <h3 style="color: #45a049; text-align: center;">Sam Atu Foundation 2024 SSCE Scholarship Registration Form</h3>  
+	  <form id="scholarshipForm">
             <label for="surname">Surname *</label>
             <input type="text" id="surname" name="surname" required>
 
@@ -223,7 +222,8 @@
             </div>
         </div>
     </div>
-
+</section>
+	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         function handleFormSubmit(event) {
