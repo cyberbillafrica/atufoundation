@@ -167,158 +167,17 @@ main {
    <h6 class="title" style="color: red;">Note that submitting wrong/false information automatically disqualifies you from the programme and your application will not be considered</h6>
 </div>
 	
-	<section>
-		
-	<div class="row">
-          <div class="col-lg-8 mx-auto wow fadeIn" data-wow-delay="0.1s">
-           <form id="dataForm" method="post" action="https://script.google.com/macros/s/AKfycbwjjH-U1QVcfgOzPNz7bxTDPlz0J0kk6JqgzEI-wcW28uM6o2ItGaUBMjYhS4WOqI0G/exec">
-            <div class="controls">
-                <div class="row">
-			
-<div class="col-md-6 mb-3">
-   <label for="surname">Surname <span class="required">*</span></label>
-    <input type="text" id="surname" name="surname" placeholder="Enter Surname" required="required" class="form-control">
-</div>
-
-<div class="col-md-6 mb-3">
-    <label for="first-name">First Name <span class="required">*</span></label>
-    <input type="text" id="firstName" name="firstName" placeholder="Enter Firstname" required="required" class="form-control">
-</div>
-
-<div class="col-md-6 mb-3">
-    <label for="phone-number">Phone Number <span class="required">*</span></label>
-    <input type="text" id="phone" name="phone" placeholder="Enter Phone Number" required="required" class="form-control">
-</div>
-
-<div class="col-md-6 mb-3">
-    <label for="email">Email Address <span class="required">*</span></label>
-    <input type="text" id="email" name="email" placeholder="Enter Email Address" required="required" class="form-control">
-</div>
-
-<div class="col-md-6 mb-3">
-    <label for="address">Address <span class="required">*</span></label>
-    <input type="text" id="address" name="address" placeholder="Where do you live?" required="required" class="form-control">
-</div>
-			
-<div class="col-md-6 mb-3">
-    <label for="address">Name of School <span class="required">*</span></label>
-    <input type="text" id="school" name="school" placeholder="Which School do you Attend?" required="required" class="form-control">
-</div>
-<div class="col-md-6 mb-3">
-    <label for="gender">Gender <span class="required">*</span></label>
-    <select id="gender" name="gender" required="required" class="form-control">
-        <option value="">Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-    </select>
-</div>
-
-   <div class="col-md-6 mb-3">
-    <label for="dob">Select Date of Birth <span class="required">*</span></label>
-    <input type="date" id="dob" name="dob" required="required" class="form-control">
-</div>
 
 
-<!-- HTML -->
-<div class="col-md-6 mb-3">
-    <label for="lga">Local Government Area (LGA) <span class="required">*</span></label>
-    <select name="LGA" id="lga" class="form-control" required>
-        <option value="">Select your Local Government Area</option>
-        <option value="Enugu North">Enugu North</option>
-        <option value="Enugu South">Enugu South</option>
-        <!-- Add more LGAs as needed -->
-    </select>
-</div>
-
-<div class="col-md-6 mb-3">
-    <label for="ward">Political Ward <span class="required">*</span></label>
-    <select name="Political-ward" id="ward" class="form-control" required>
-        <option value="">Select your Ward</option>
-        <!-- Wards will be populated dynamically using JavaScript -->
-    </select>
-</div>
-
-
-<!-- JavaScript -->
-<script>
-  // Create a mapping of LGAs to wards
-  const lgaWardMapping = {
-    "Enugu North": [
-      "Ward 1 ASATA TOWNSHIP",
-      "Ward 2 UMUNEVO",
-      "Ward 3 IHEWUZI",
-      "Ward 4 ONU-ASATA",
-      "Ward 5 OGBETTE EAST",
-      "Ward 6 OGBETTE WEST",
-      "Ward 7 G.R.A",
-      "Ward 8 OGUI NEW LAYOUT",
-      "Ward 9 CHINA TOWN",
-      "Ward 10 NEW HAVEN",
-      "Ward 11 INDEPENDENCE LAYOUT",
-      "Ward 12 UDI SIDING/IVA VALLEY",
-      "Ward 13 OGUI TOWNSHIP"
-    ],
-    "Enugu South": [
-      "Ward 1 AMECHI I",
-      "Ward 2 AMECHI II",
-      "Ward 3 OBEAGU",
-      "Ward 4 UWANI EAST",
-      "Ward 5 UWANI WEST",
-      "Ward 6 ACHARA LAYOUT EAST",
-      "Ward 7 ACHARA LAYOUT WEST",
-      "Ward 8 AWKUNANAW EAST",
-      "Ward 9 AWKUNANAW WEST",
-      "Ward 10 UGWUAJI",
-      "Ward 11 OBEAGU II",
-      "Ward 12 AKWUKE",
-      "Ward 13 MARYLAND"
-    ]
-  };
-
-  const lgaSelect = document.getElementById("lga");
-  const wardSelect = document.getElementById("ward");
-
-  lgaSelect.addEventListener("change", function () {
-    const selectedLGA = lgaSelect.value;
-    // Clear current ward options
-    wardSelect.innerHTML = "<option value=''>Select your Ward *</option>";
-
-    // Populate the ward dropdown based on the selected LGA
-    if (selectedLGA in lgaWardMapping) {
-      const wards = lgaWardMapping[selectedLGA];
-      wards.forEach((ward) => {
-        const option = document.createElement("option");
-        option.value = ward;
-        option.textContent = ward;
-        wardSelect.appendChild(option);
-      });
-    }
-  });
-</script>
-                  
- <div class="text-center">
-    <button class="btn btn-primary py-2 px-3 me-3" id="submit">
-        Submit
-        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-            <i class="fa fa-arrow-right"></i>
+	<div class="col-12 mb-3 text-center">
+            <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
+               <a class="btn btn-primary py-2 px-3 animated slideInDown" href="form.html">
+                 Register Now!
+             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+         <i class="fa fa-arrow-right"></i>
         </div>
-    </button>
-</div>
- </div>  
-</form>
-		  
-          </div>
-        </div>
-       </div>
-	</div>
-          </div>
+               </a>
          </div>
-          </div>
-        </div>
-      </div>
-</section>
-	
-	
 	
 	
 	
