@@ -106,7 +106,7 @@ button:hover {
             
            <!-- HTML -->
    <label for="lga">Local Government Area (LGA) <span class="required">*</span></label>
-    <select name="LGA" id="lga" required>
+    <select name="lga" id="lga" required>
         <option value="">Select your Local Government Area</option>
         <option value="Enugu North">Enugu North</option>
         <option value="Enugu South">Enugu South</option>
@@ -115,7 +115,7 @@ button:hover {
 
 
   <label for="ward">Political Ward <span class="required">*</span></label>
-    <select name="Political-ward" id="ward" required>
+    <select name="ward" id="ward" required>
         <option value="">Select your Ward</option>
         <!-- Wards will be populated dynamically using JavaScript -->
     </select>
@@ -220,7 +220,7 @@ button:hover {
             const data = new FormData(form);
 
             // Send data to Google Sheet
-            fetch('https://script.google.com/macros/s/AKfycbzKeFHzkEYM2QvytV63oZj4DyTLYUKqfTX5RxD88SqBbaaBeDWdE0NLdctRmESgpx8o7g/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbwn0EuCE9IAGT4YoP3lSjCRKm4TZuy46DSyC7sptpo0uml5i2iYxVjS4UBGbJK7Nkxr/exec', {
                 method: 'POST',
                 body: data
             })
