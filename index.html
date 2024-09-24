@@ -102,9 +102,24 @@
     background-color: #0056b3;
   }
 
- .btn-large-text {
-        font-size: 2rem; /* Adjust to fit the size of h2 or h3 */
+/* Ensures the font size adjusts responsively based on screen size */
+.btn-large-text {
+    font-size: 2rem; /* Default size */
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+    .btn-large-text {
+        font-size: 2.5rem; /* Increase font size for medium and larger screens */
     }
+}
+
+@media (min-width: 1200px) {
+    .btn-large-text {
+        font-size: 3rem; /* Further increase font size for larger screens */
+    }
+}
+
         
     </style>
 </head>
@@ -227,12 +242,12 @@
     <!-- Carousel End -->
 
 <hr>
- <div class="col-12 mb-3 text-center">
-     <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
-      <a class="btn btn-primary animated slideInDown btn-large-text" hre="">
-          Our SSCE Scholarship Programme
-              </a>
-           </div>
+<div class="col-12 mb-3 text-center">
+    <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
+        <h1 class="btn-large-text animated slideInDown">Our SSCE Scholarship Programme</h1>
+    </div>
+</div>
+
 
      
           <div class="col-12 mb-3">
