@@ -31,8 +31,40 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
    
+
+    <style>
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            text-align: center;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .gallery-item span {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
+    
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -140,7 +172,32 @@
           </div>
     </div>
 
-
+<div class="gallery-container">
+    <div class="gallery-item">
+        <img src="img/about.jpg" alt="Image 1">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img/youth1.jpg" alt="Image 2">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img/about-2.jpg" alt="Image 3">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+  </div>
+    <div class="gallery-item">
+        <img src="img/team-1.jpg" alt="Image 4">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+  </div>
+    <div class="gallery-item">
+        <img src="img/team-4.jpg" alt="Image 5">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img/team-3.jpg" alt="Image 6">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+   </div>
+</div>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
