@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            text-align: center;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .gallery-item span {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="gallery-container">
+    <div class="gallery-item">
+        <img src="img1.jpg" alt="Image 1">
+        <span>Image Title 1</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img2.jpg" alt="Image 2">
+        <span>Image Title 2</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img3.jpg" alt="Image 3">
+        <span>Image Title 3</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img4.jpg" alt="Image 4">
+        <span>Image Title 4</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img5.jpg" alt="Image 5">
+        <span>Image Title 5</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img6.jpg" alt="Image 6">
+        <span>Image Title 6</span>
+    </div>
+</div>
+
+</body>
+</html>
