@@ -31,6 +31,36 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+      <style>
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            text-align: center;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .gallery-item span {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -45,9 +75,9 @@
     <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
-                <small><i class="fa fa-map-marker-alt me-2"></i>Umumba Ndiaga Ugwuaji Awk, Enugu Nigeria</small>
-                <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@atufoundation.com</small>
-            </div>
+               <small><i class="fa fa-map-marker-alt me-2"></i>7 Umuawulu Street Opposite Day Secondary School, Independence Layout Enugu</small>
+                <small class="ms-4"><i class="fa fa-envelope me-2"></i>samatufoundation@gmail.com</small>
+           </div>
             <div class="col-lg-6 px-5 text-end">
                 <small>Follow us:</small>
                 <a class="text-white-50 ms-3" href=""><i class="fab fa-facebook-f"></i></a>
@@ -141,7 +171,33 @@
     </div>
 
 
-        
+        <div class="gallery-container">
+    <div class="gallery-item">
+        <img src="img/about.jpg" alt="Image 1">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img/youth1.jpg" alt="Image 2">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img/about-2.jpg" alt="Image 3">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+  </div>
+    <div class="gallery-item">
+        <img src="img/team-1.jpg" alt="Image 4">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+  </div>
+    <div class="gallery-item">
+        <img src="img/team-4.jpg" alt="Image 5">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+    </div>
+    <div class="gallery-item">
+        <img src="img/team-3.jpg" alt="Image 6">
+        <span>Chima Sam Atu visits the sick at Asata ward</span>
+   </div>
+</div>
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -159,11 +215,11 @@
                         <a class="btn btn-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+               <div class="col-lg-4 col-md-6">
                     <h5 class="text-light mb-4">Address</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>Umumba Ndiaga Ugwuaji Awk, Enugu Nigeria</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+2348034567890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@chisaf.com</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>7 Umuawulu Street Opposite Day Secondary School, Independence Layout Enugu</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>09054197238</p>
+                    <p><i class="fa fa-envelope me-3"></i>samatufoundation@gmail.com</p>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h5 class="text-light mb-4">Quick Links</h5>
