@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Exam Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Name</th>
+                <th>Exam Number</th>
+                <th>Exam Center</th>
+            </tr>
+        </thead>
+        <tbody id="studentTable">
+            <!-- Data will be inserted here dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        // Replace with your Google Sheet's published URL
+        const sheetUrl = 'https://docs.google.com/spreadsheets/d/2PACX-1vRDxiFbmOBTqiuBlL7P8pTOQl1RJ5XbOOzAELnABlLTjCGFD2PjpNxYrvzpV6LxzmLFNtm_78ebpX01/gviz/tq?tqx=out:json';
+
+        fetch(sheetUrl)
+            .then(response => response.text())
+            .then(data => {
+                const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+                const rows = jsonData.table.rows;
+                const tableBody = document.getElementById('studentTable');
+
+                rows.forEach((row, index) => {
+                    const name = row.c[0]?.v || 'N/A';
+                    const examNumber = row.c[1]?.v || 'N/A';
+                    const examCenter = row.c[2]?.v || 'N/A';
+
+                    const newRow = `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${name}</td>
+                            <td>${examNumber}</td>
+                            <td>${examCenter}</td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += newRow;
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
