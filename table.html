@@ -165,7 +165,8 @@
                 <th>Name</th>
                 <th>Exam Number</th>
                 <th>Exam Center</th>
-            </tr>
+                <th>Exam Time</th>
+	    </tr>
         </thead>
         <tbody id="studentTable">
             <!-- Data will be dynamically inserted here -->
@@ -191,7 +192,8 @@
                                 <td>${columns[0].trim()}</td>
                                 <td>${columns[1].trim()}</td>
                                 <td>${columns[2].trim()}</td>
-                            </tr>
+                                 <td>${columns[3].trim()}</td>
+			   </tr>
                         `;
                         tableBody.innerHTML += newRow;
                     }
