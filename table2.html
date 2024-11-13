@@ -1,113 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Exam Table</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        #searchInput {
-            width: 100%;
-            padding: 10px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Table</title>
 </head>
 <body>
-    <h1>Student Exam Table</h1>
-    <input type="text" id="searchInput" placeholder="Search by name or exam number...">
-    <table>
-        <thead>
-            <tr>
-                <th>S/N</th>
-                <th>Name</th>
-                <th>Exam Number</th>
-                <th>Exam Center</th>
-                <th>Exam Time</th>
-            </tr>
-        </thead>
-        <tbody id="studentTable">
-            <!-- Data will be dynamically inserted here -->
-        </tbody>
-    </table>
+  <table id="examTable" border="1">
+    <thead>
+      <tr>
+        <th>S/N</th>
+        <th>Full Name</th>
+        <th>Exam Number</th>
+        <th>Exam Center</th>
+        <th>Exam Time</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-    <script>
-        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_zSoiJMx1exAzOfp78teShh-xw1LTRdGgmVjhDFvkc2y_vnTOQymI0v55hzFEMWqwcoZ1GLBxRtnZ/output=csv';
+  <script>
+    const sheetUrl = "https://script.google.com/macros/s/AKfycbwzCNL_uWNKWUBsdHV9_GTiyzdqYg9UM-ser1Y7FNCPjx3QYCANuzGsoV__M8AMwQc9/exec"; // Replace with your Google Apps Script web app URL
 
-        fetch(csvUrl)
-            .then(response => response.text())
-            .then(csvData => {
-                const rows = csvData.split('\n').slice(1); // Skip header row
-                const tableBody = document.getElementById('studentTable');
-
-                rows.forEach((row, index) => {
-                    const columns = row.split(',');
-
-                    if (columns.length >= 4) { // Ensure there are enough columns
-                        const newRow = `
-                            <tr>
-                                <td>${index + 1}</td>
-                                <td>${columns[0].trim()}</td>
-                                <td>${columns[1].trim()}</td>
-                                <td>${columns[2].trim()}</td>
-                                <td>${columns[3].trim()}</td>
-                            </tr>
-                        `;
-                        tableBody.innerHTML += newRow;
-                    }
-                });
-
-                addSearchFunctionality();
-            })
-            .catch(error => console.error('Error fetching CSV data:', error));
-
-        function addSearchFunctionality() {
-            const searchInput = document.getElementById('searchInput');
-            const table = document.getElementById('studentTable');
-
-            searchInput.addEventListener('keyup', () => {
-                const filter = searchInput.value.toLowerCase();
-                const rows = table.getElementsByTagName('tr');
-
-                for (let i = 0; i < rows.length; i++) {
-                    const cells = rows[i].getElementsByTagName('td');
-                    let rowContainsFilter = false;
-
-                    for (let j = 0; j < cells.length; j++) {
-                        if (cells[j].textContent.toLowerCase().includes(filter)) {
-                            rowContainsFilter = true;
-                            break;
-                        }
-                    }
-
-                    rows[i].style.display = rowContainsFilter ? '' : 'none';
-                }
-            });
-        }
-    </script>
+    fetch(sheetUrl)
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.getElementById("tableBody");
+        data.forEach(row => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${row['S/N']}</td>
+            <td>${row['Full Name']}</td>
+            <td>${row['Exam Number']}</td>
+            <td>${row['Exam Center']}</td>
+            <td>${row['Exam Time']}</td>
+          `;
+          tableBody.appendChild(tr);
+        });
+      })
+      .catch(error => console.error("Error fetching data:", error));
+  </script>
 </body>
 </html>
