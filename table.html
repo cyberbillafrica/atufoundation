@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SSCE Exam Details</title> 
+    <title>Scholarship Exam Details</title> 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -156,77 +156,62 @@
 		<input type="text" id="searchInput" placeholder="Search by name, exam number or exam center...">
 	</div>
 <div>
-	<h5 class="title" style="color: red;">Student,s Examination Details</h5>
+	<h5 class="title" style="color: red;">Student's Examination Details</h5>
 
-	<table>
-        <thead>
-            <tr>
-                <th>S/N</th>
-                <th>Name</th>
-                <th>Exam Number</th>
-                <th>Exam Center</th>
-                <th>Exam Time</th>
-	    </tr>
-        </thead>
-        <tbody id="studentTable">
-            <!-- Data will be dynamically inserted here -->
-        </tbody>
-    </table>
-</div>
-    <script>
-        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_zSoiJMx1exAzOfp78teShh-xw1LTRdGgmVjhDFvkc2y_vnTOQymI0v55hzFEMWqwcoZ1GLBxRtnZ/pub?output=csv';
+	<table id="examTable">
+    <thead>
+      <tr>
+        <th>S/N</th>
+        <th>Full Name</th>
+        <th>Exam Number</th>
+        <th>Exam Center</th>
+        <th>Exam Time</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-        fetch(csvUrl)
-            .then(response => response.text())
-            .then(csvData => {
-                const rows = csvData.split('\n').slice(1); // Skip header row
-                const tableBody = document.getElementById('studentTable');
+  <script>
+     const sheetUrl = "https://script.google.com/macros/s/AKfycbwS7sYyI3WrrVgFJCo8KwO6BafNLWPUiyuQT4Gd7tgo_ziIVrw147yGo9-cbQO1ch0/exec"; // Replace with your Google Apps Script web app URL
 
-                rows.forEach((row, index) => {
-                    const columns = row.split(',');
+    // Fetch data from Google Sheet and populate table
+    fetch(sheetUrl)
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.getElementById("tableBody");
 
-                    if (columns.length >= 3) { // Ensure there are enough columns
-                        const newRow = `
-                            <tr>
-                                <td>${index + 1}</td>
-                                <td>${columns[0].trim()}</td>
-                                <td>${columns[1].trim()}</td>
-                                <td>${columns[2].trim()}</td>
-                                 <td>${columns[3].trim()}</td>
-			   </tr>
-                        `;
-                        tableBody.innerHTML += newRow;
-                    }
-                });
-             addSearchFunctionality();
-            })
-            .catch(error => console.error('Error fetching CSV data:', error));
-
-        function addSearchFunctionality() {
-            const searchInput = document.getElementById('searchInput');
-            const table = document.getElementById('studentTable');
-
-            searchInput.addEventListener('keyup', () => {
-                const filter = searchInput.value.toLowerCase();
-                const rows = table.getElementsByTagName('tr');
-
-                for (let i = 0; i < rows.length; i++) {
-                    const cells = rows[i].getElementsByTagName('td');
-                    let rowContainsFilter = false;
-
-                    for (let j = 0; j < cells.length; j++) {
-                        if (cells[j].textContent.toLowerCase().includes(filter)) {
-                            rowContainsFilter = true;
-                            break;
-                        }
-                    }
-
-                    rows[i].style.display = rowContainsFilter ? '' : 'none';
-                }
-            });
+        // Function to render table rows
+        function renderTable(data) {
+          tableBody.innerHTML = "";  // Clear existing rows
+          data.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${row['S/N']}</td>
+              <td>${row['Full Name']}</td>
+              <td>${row['Exam Number']}</td>
+              <td>${row['Exam Center']}</td>
+              <td>${row['Exam Time']}</td>
+            `;
+            tableBody.appendChild(tr);
+          });
         }
-    </script>
 
+        // Initial render of full data
+        renderTable(data);
+
+        // Search functionality
+        document.getElementById("searchInput").addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase();
+          const filteredData = data.filter(row => 
+            row['Full Name'].toLowerCase().includes(searchTerm) ||
+            row['Exam Number'].toLowerCase().includes(searchTerm) ||
+            row['Exam Center'].toLowerCase().includes(searchTerm)
+          );
+          renderTable(filteredData);
+        });
+      })
+      .catch(error => console.error("Error fetching data:", error));
+  </script>
     
 	<section>
 <div class= "text-center" style="background-color: #02383a;">
