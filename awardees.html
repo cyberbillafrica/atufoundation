@@ -240,27 +240,27 @@ document.getElementById("searchInput").addEventListener("input", function () {
 
 <!-- Share News Start-->
 <hr
-<h6 class="mt-4 mb-3 text-dark text-uppercase font-weight-bold">Share News</h6>
+
+<h6 class="mt-4 mb-3 text-dark text-uppercase font-weight-bold">Share to Friends</h6>
 <div class="d-flex justify-content-start">
-    <a class="btn btn-lg btn-danger btn-lg-square mr-2" id="twitter-share" target="_blank">
+    <a class="btn btn-lg btn-danger btn-lg-square" id="twitter-share" target="_blank" style="margin-right: 5px;">
         <i class="fab fa-twitter"></i>
     </a>
-    <a class="btn btn-lg btn-info btn-lg-square mr-2" id="facebook-share" target="_blank">
+    <a class="btn btn-lg btn-info btn-lg-square" id="facebook-share" target="_blank" style="margin-right: 5px;">
         <i class="fab fa-facebook-f"></i>
     </a>
     <a class="btn btn-lg btn-success btn-lg-square" id="whatsapp-share" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 </div>
-
 <script>
     // Get the current page URL
     const pageUrl = encodeURIComponent(window.location.href);
 
     // Update share links dynamically
-    document.getElementById("twitter-share").href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=Check%20this%20out!`;
+    document.getElementById("twitter-share").href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=Check%20out%20the%20list%20and%20details%20of%20the%202024%20Chimaobi%20Sam%20Atu%20Foundation%20Scholarship%20Competition%20Final%20Awardees`;
     document.getElementById("facebook-share").href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-    document.getElementById("whatsapp-share").href = `https://api.whatsapp.com/send?text=Check%20this%20out:%20${pageUrl}`;
+    document.getElementById("whatsapp-share").href = `https://api.whatsapp.com/send?&text=Check%20out%20the%20list%20and%20details%20of%20the%202024%20Chimaobi%20Sam%20Atu%20Foundation%20Scholarship%20Competition%20Final%20Awardees:%20${pageUrl}`;
 </script>
 <!-- Share News End-->
 			
