@@ -162,7 +162,7 @@
         </table>
 
         <script>
-            const sheetUrl = "https://script.google.com/macros/s/AKfycbwS7sYyI3WrrVgFJCo8KwO6BafNLWPUiyuQT4Gd7tgo_ziIVrw147yGo9-cbQO1ch0/exec"; // Replace with your Google Apps Script web app URL
+            const sheetUrl = "https://script.google.com/macros/s/AKfycbyFPJCaB22RVXv4HBq1JyXAtX96Xudq7mPPz6QLHZrhfSMF7ackQHDQ-ylnKT1RydqCYQ/exec"; // Replace with your Google Apps Script web app URL
 
             // Fetch data from Google Sheet and populate table
             fetch(sheetUrl)
