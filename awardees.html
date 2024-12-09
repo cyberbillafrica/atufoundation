@@ -136,7 +136,7 @@
 
     <!-- Registration Form-->
     <header class="text-center">
-          <h2 class="title" style="color: #26d48c;">Chimaobi Sam Atu Foundation 2024 SSCE Scholarship Exam Details</h2>
+          <h2 class="title" style="color: #26d48c;">Chimaobi Sam Atu Foundation 2024 SSCE Scholarship Final Awardees</h2>
 	</header>
 	
     <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4"></div>
@@ -146,49 +146,51 @@
     </div>
 
     <div>
-        <h5 class="title" style="color: red;">Student's Examination Details</h5>
+        <h5 class="title" style="color: red;">Awardees Details</h5>
         <table id="examTable">
             <thead>
                 <tr>
-                    <th>S/N</th>
-                    <th>Full Name</th>
-                    <th>Exam Number</th>
-                    <th>Exam Center</th>
-                    <th>Exam Time</th>
-                    <th>Final Grade</th>
+                     <th>S/N</th>
+                <th>SURNAME</th>
+                <th>FIRST NAME</th>
+                <th>SCHOOL</th>
+                <th>GENDER</th>
+                <th>EXAM NO</th>
+                <th>ENG</th>
+                <th>MATHS</th>
+                <th>TOTAL</th>
+                <th>PERCENTAGE</th>
+                <th>FINAL GRADE</th> <!-- Updated column name -->
                 </tr>
             </thead>
             <tbody id="tableBody"></tbody>
         </table>
+// Fetch data from Google Apps Script Web App
+        fetch('https://script.google.com/macros/s/AKfycbyFPJCaB22RVXv4HBq1JyXAtX96Xudq7mPPz6QLHZrhfSMF7ackQHDQ-ylnKT1RydqCYQ/exec') // Replace with your actual web app URL
+            .then(response => response.json())
+            .then(data => {
+                // Get the table body element
+                const tbody = document.querySelector('#resultsTable tbody');
+                
+                // Loop through the data and create rows
+                data.forEach((row, index) => {
+                    // Skip the header row (first row in the data array)
+                    if (index === 0) return;
 
-        <script>
-            const sheetUrl = "https://script.google.com/macros/s/AKfycbyFPJCaB22RVXv4HBq1JyXAtX96Xudq7mPPz6QLHZrhfSMF7ackQHDQ-ylnKT1RydqCYQ/exec"; // Replace with your Google Apps Script web app URL
-
-            // Fetch data from Google Sheet and populate table
-            fetch(sheetUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.getElementById("tableBody");
-
-                    // Function to render table rows
-                    function renderTable(data) {
-                        tableBody.innerHTML = "";  // Clear existing rows
-                        data.forEach(row => {
-                            const tr = document.createElement("tr");
-                            tr.innerHTML = `
-                                <td>${row['S/N']}</td>
-                                <td>${row['Full Name']}</td>
-                                <td>${row['Exam Number']}</td>
-                                <td>${row['Exam Center']}</td>
-                                <td>${row['Exam Time']}</td>
-                                <td>${row['Final Grade']}</td>
-                            `;
-                            tableBody.appendChild(tr);
-                        });
-                    }
-
-                    // Initial render of full data
-                    renderTable(data);
+                    // Create a new row
+                    const tr = document.createElement('tr');
+                    
+                    // Loop through the row data and create cells
+                    row.forEach(cell => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    });
+                    
+                    // Append the row to the table body
+                    tbody.appendChild(tr);
+                });
+            })
 
                     // Search functionality
                     document.getElementById("searchInput").addEventListener("input", function () {
