@@ -192,10 +192,9 @@
                     // Append the row to the table body
                     tbody.appendChild(tr);
           });
-        }
-
         // Initial render of full data
         renderTable(data);
+		    
         // Search functionality
 document.getElementById("searchInput").addEventListener("input", function () {
   const searchTerm = this.value.toLowerCase();
