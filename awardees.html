@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Scholarship Exam Details</title> 
+    <title>2024 Scholarship Awardees Details</title> 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="2024 Scholarship Awardees Details" name="keywords">
+    <meta content="Chimaobi Sam Atu Foundation 2024 Scholarship Awardees Details" name="description">
 
-    <meta property="og:title" content="Atu Foundation">
-    <meta property="og:description" content="Join hands with us as we extend the helping hands to our communities.">
-    <meta property="og:image" content="img/mrsatu.jpg">
+    <meta property="og:title" content="2024 Scholarship Awardees Details">
+    <meta property="og:description" content="Chimaobi Sam Atu Foundation 2024 Scholarship Awardees Details">
+    <meta property="og:image" content="img/atuweac.jpg">
     <meta property="og:url" content="https://cyberbillafrica.github.io/honatu">
 
     <!-- Favicon -->
@@ -127,7 +127,7 @@
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a class="text-white" href="#">Departments</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">Registration Portal</li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Scholarship Awardees</li>
                 </ol>
             </nav>
         </div>
@@ -150,7 +150,7 @@
         <table id="examTable">
             <thead>
                 <tr>
-                     <th>S/N</th>
+                       <th>S/N</th>
                 <th>SURNAME</th>
                 <th>FIRST NAME</th>
                 <th>SCHOOL</th>
@@ -161,13 +161,13 @@
                 <th>TOTAL</th>
                 <th>PERCENTAGE</th>
                 <th>FINAL GRADE</th> <!-- Updated column name -->
-                </tr>
-            </thead>
-            <tbody id="tableBody"></tbody>
-        </table>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
-	    <script>
-// Fetch data from Google Apps Script Web App
+    <script>
+        // Fetch data from Google Apps Script Web App
         fetch('https://script.google.com/macros/s/AKfycbyFPJCaB22RVXv4HBq1JyXAtX96Xudq7mPPz6QLHZrhfSMF7ackQHDQ-ylnKT1RydqCYQ/exec') // Replace with your actual web app URL
             .then(response => response.json())
             .then(data => {
@@ -192,22 +192,22 @@
                     // Append the row to the table body
                     tbody.appendChild(tr);
                 });
-            })
+             // Search functionality
+        document.getElementById("searchInput").addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase();
+          const filteredData = data.filter(row => 
+            row['Full Name'].toLowerCase().includes(searchTerm) ||
+            row['Exam Number'].toLowerCase().includes(searchTerm) ||
+            row['Exam Center'].toLowerCase().includes(searchTerm)
+          );
+          renderTable(filteredData);
+        });
+    })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
 
-                    // Search functionality
-                    document.getElementById("searchInput").addEventListener("input", function () {
-                        const searchTerm = this.value.toLowerCase();
-                        const filteredData = data.filter(row => 
-                            row['Full Name'].toLowerCase().includes(searchTerm) ||
-                            row['Exam Number'].toLowerCase().includes(searchTerm) ||
-                            row['Exam Center'].toLowerCase().includes(searchTerm)
-                        );
-                        renderTable(filteredData);
-                    });
-                })
-                .catch(error => console.error("Error fetching data:", error));
-        </script>
-    
 	<section>
 <div class= "text-center" style="background-color: #02383a;">
         <div class="bg-light border-bottom border-5 border-blue rounded p-4 mb-4">
