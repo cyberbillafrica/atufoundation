@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Student Results</h1>
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>SURNAME</th>
+                <th>FIRST NAME</th>
+                <th>SCHOOL</th>
+                <th>GENDER</th>
+                <th>EXAM NO</th>
+                <th>ENG</th>
+                <th>MATHS</th>
+                <th>TOTAL</th>
+                <th>PERCENTAGE</th>
+                <th>FINAL GRADE</th> <!-- Updated column name -->
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        // Fetch data from Google Apps Script Web App
+        fetch('YOUR_WEB_APP_URL') // Replace with your actual web app URL
+            .then(response => response.json())
+            .then(data => {
+                // Get the table body element
+                const tbody = document.querySelector('#resultsTable tbody');
+                
+                // Loop through the data and create rows
+                data.forEach((row, index) => {
+                    // Skip the header row (first row in the data array)
+                    if (index === 0) return;
+
+                    // Create a new row
+                    const tr = document.createElement('tr');
+                    
+                    // Loop through the row data and create cells
+                    row.forEach(cell => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    });
+                    
+                    // Append the row to the table body
+                    tbody.appendChild(tr);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+
+</body>
+</html>
