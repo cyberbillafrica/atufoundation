@@ -10,9 +10,9 @@
         p { font-size: 18px; color: #666; }
     </style>
     <script>
-        if (window.location.pathname !== "/") {
-            window.location.href = "/";
-        }
+    if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
+        window.location.replace("/");
+    }
     </script>
 </head>
 <body>
